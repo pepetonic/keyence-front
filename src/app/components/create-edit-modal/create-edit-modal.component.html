@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>{{ titleLabel }}</h2>
+<mat-dialog-content *ngIf="myForm">
+  <form #form="ngForm" class="form-modal" [formGroup]="myForm">
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="User Id" name="userId" formControlName="userId"  required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="User Name" name="userName" formControlName="userName" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Date" name="date" formControlName="date" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Punch In" name="punchIn" formControlName="punchIn" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Punch Out" name="punchOut" formControlName="punchOut" required>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions class="buttons-modal-section">
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-raised-button class="button-primary"  (click)="save()">Guardar</button>
+</mat-dialog-actions>
